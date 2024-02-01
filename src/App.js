@@ -1,10 +1,25 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { useEffect } from "react";
+import store from "./store/store";
+import Home from "./screens/Home";
+import { fetchMovies } from "./store/actions/movies";
 
-function App() {
+
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />
+  }
+])
+
+const App = () => {
+  useEffect(() => {
+    store.dispatch(fetchMovies())
+  }, [])
+
   return (
-    <div className="App">
-      
-    </div>
-  );
+    <RouterProvider router={appRouter} />
+  )
 }
 
 export default App;
