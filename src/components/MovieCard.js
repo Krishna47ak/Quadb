@@ -8,9 +8,9 @@ import {
 } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 
-const MovieCard = ({ id, img, name, description, genres }) => {
+const MovieCard = ({ id, img, name, genres }) => {
     return (
-        <Card className="w-full md:flex-row">
+        <Card className="bg-gray-400 w-full md:flex-row">
             <CardHeader
                 shadow={false}
                 floated={false}
@@ -28,14 +28,11 @@ const MovieCard = ({ id, img, name, description, genres }) => {
                 </Typography>
                 <div className="flex flex-wrap space-x-2" >
                     {genres?.map(e => (
-                        <Chip color="gray" value={e} />
+                        <Chip key={e} color="gray" value={e} />
                     ))}
                 </div>
 
-                {/* <Typography color="gray" className="mb-3 md:mb-8 font-normal">
-                    <div dangerouslySetInnerHTML={{ __html: description }} />
-                </Typography> */}
-                <Link to={`/${id}`} className="inline-block mt-auto">
+                <Link to={`/${id}`} className="inline-block mt-7 sm:mt-auto">
                     <Button variant="text" className="flex items-center gap-2">
                         Learn More
                         <svg

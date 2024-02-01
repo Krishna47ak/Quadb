@@ -38,7 +38,7 @@ const Home = () => {
             ) :
                 <div className="grid lg:grid-cols-2 gap-y-7 lg:gap-7 p-10 md:p-16" >
                     {searchData?.map((movie) => (
-                        <MovieCard key={movie?.show?.id} id={movie?.show?.id} img={movie?.show?.image?.original} name={movie?.show?.name} description={movie?.show?.summary} genres={movie?.show?.genres} />
+                        <MovieCard key={movie?.show?.id} id={movie?.show?.id} img={movie?.show?.image?.original} name={movie?.show?.name} genres={movie?.show?.genres} />
                     ))}
                 </div>}
         </div>
